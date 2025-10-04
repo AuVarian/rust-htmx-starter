@@ -43,7 +43,7 @@
               class="flex-1 min-w-0 text-sm font-medium text-neutral-500 dark:text-neutral-400 overflow-y-hidden overflow-x-hidden">
             <ul class="flex flex-wrap -mb-px">
               <li class="me-2">
-                <a hx-get="/tabs/overview" hx-target="#main" hx-swap="innerHTML" hx-push-url="true"
+                <a hx-get="/tabs/overview" hx-target="#main" hx-swap="innerHTML" hx-push-url="true" aria-current="page"
                    class="inline-block p-4 border-b-2 border-transparent rounded-t-lg
                           hover:text-neutral-600 hover:border-neutral-300 dark:hover:text-neutral-300">
                   Overview
@@ -51,7 +51,6 @@
               </li>
               <li class="me-2">
                 <a hx-get="/tabs/details" hx-target="#main" hx-swap="innerHTML" hx-push-url="true"
-                   aria-current="page"
                    class="inline-block p-4 text-blue-600 border-b-2 border-blue-600 rounded-t-lg active
                           dark:text-blue-500 dark:border-blue-500">
                   Details
@@ -281,8 +280,8 @@
           try {
             const p = new URL(url, location.origin).pathname;
             const m = p.match(/\/tabs\/([^/]+)/);
-            return m ? m[1] : 'details'; // default matches initial tab
-          } catch { return 'details'; }
+            return m ? m[1] : 'overview'; // default matches initial tab
+          } catch { return 'overview'; }
         }
 
         setActiveBySlug(slugFromURL(location.href));

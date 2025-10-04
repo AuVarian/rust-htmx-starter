@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "tw:build": "tailwindcss -i ./static/css/input.css -o ./static/css/app.css",
     "tw:watch": "tailwindcss -i ./static/css/input.css -o ./static/css/app.css --watch"
   },
   "keywords": [],
